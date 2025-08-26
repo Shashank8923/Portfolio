@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shashank Sisodia - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <a href="#" class="logo">Sh@shank</a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="project-page.html">Projects</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <div class="hero-subcontent">
+                <img class="profile_photo" src="shashank.jpg" alt="my profile photo ">
+                <h1>Hi, I'm [Shashank sisodia]</h1>
+            </div>
+            <p id="hero-content_p">
+                Hi there! I'm Shashank Sisodia, a web design enthusiast from Aligarh, India. As a fresher in the
+                industry, I'm constantly learning and growing my skills in **HTML, CSS, and JavaScript**. I love taking
+                ideas and turning them into real, interactive websites. I believe that every great website starts with
+                clean code and thoughtful design. I'm a motivated and open-minded individual, and I'm looking for a
+                chance to kickstart my career and work on exciting projects. Let's build something amazing together!
+            </p>
+        </div>
+    </section>
+    <a href="project-page.html" class="btn">View My Work</a>
+    <br>
+    <br>
+    <hr>
+
+    <section id="about">
+        <h2>MY journey</h2>
+        <p>
+            From the first line of code I wrote, I was hooked. While pursuing my Diploma in Computer Science and
+            Engineering, my real
+            classroom has been in building projects and constantly experimenting with code. Whether it's crafting a
+            responsive layout with **CSS** or adding dynamic functionality with **JavaScript**, I love the process of
+            bringing a website to life from scratch. When I'm not coding, you can find me diving into new tech articles,
+            playing online games, or exploring the latest manga releases.
+        </p>
+        <p>
+            My core strengths lie in my ability to quickly adapt and learn, a trait that is essential in the fast-paced
+            world of web development. I'm driven by a desire to build things that are not only functional but also a joy
+            to use. I take pride in my attention to detail and my commitment to creating clean, elegant code. I am
+            excited to embark on my professional career, where I can collaborate with talented people and turn creative
+            concepts into reality.
+        </p>
+    </section>
+    <hr>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>E-commerece shop(simple)</h3>
+                <img class="project-1_img" src="Screenshot project-1.png" alt="Project 1 Screenshot">
+                <img class="project-1_img" src="project-1_img2.png" alt="Project 1 Screenshot">
+                <p>
+                    I created this simple e-commerce shop to practice and showcase my front-end development skills. The
+                    site is fully responsive, meaning it looks great on any device, from a large desktop monitor to a
+                    smartphone. I used **HTML, CSS, and CSS media queries** to design the layout, including the header,
+                    a product banner, and a grid of products with hover effects. This project highlights my proficiency
+                    in building functional and visually appealing user interfaces from scratch.
+                </p>
+                <a href="link-to-live-demo" target="_blank">Live Demo</a>
+                <a href="link-to-github-repo" target="_blank">GitHub</a>
+            </div>
+            <div class="project-card">
+                <h3>Netflix Home pages (example)</h3>
+                <img class="project_img2" src="netflix-examole.png" alt="Project 2 Screenshot">
+                <p>
+                    I created this movie list web page to demonstrate my skills in front-end development. The project
+                    features a responsive design, a searchable movie gallery, and a clean, modern interface. It was
+                    built using a combination of **HTML**, **CSS**, and **JavaScript**, highlighting my proficiency in
+                    creating dynamic and user-friendly web applications.
+                </p>
+                <a href="link-to-live-demo" target="_blank">Live Demo</a>
+                <a href="link-to-github-repo" target="_blank">GitHub</a>
+                <a href="projects.html" target="_blank">click here t see more...</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h1>My Skills</h1>
+        <ul class="skills-list">
+            <li id="html">HTML5</li>
+            <li id="css3">CSS3</li>
+            <li id="javascript">JavaScript (Basics)</li>
+            <li id="Git">Git & GitHub</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <div class="contact_content">
+            <h2>Get In Touch</h2>
+            <p class="contact_content_p">I'm always open to new opportunities and collaborations!</p>
+            <p class="contact_content_p "> Email: <a href="shashanksisodia421@gmail.com">shashanksisodia421@gmail.com</a></p>
+            <p class="contact_content_p ">LinkedIn: <a href="your-linkedin-profile" target="_blank">Your LinkedIn Profile</a></p>
+            <p class="contact_content_p ">GitHub: <a href="your-github-profile" target="_blank">Your GitHub Profile</a></p>
+            <label for="CV">My Ressume (☞ﾟヮﾟ)☞</label>
+            <a href="DIPLOMA MARKSHEET.pdf" download="DIPLOMA MARKSHEET.pdf">
+                <button>CV</button>
+            </a>
+        </div>
+
+        <section class="contact_form">
+            <h2>Contact Me</h2>
+            <label for="email">Email </label><br>
+            <input type="text" name="email" placeholder="please enter your E-mail..." id="input1"><br>
+            <label for="Phone no:-">Phone no:- </label><br>
+            <select id="countryCode" name="countryCode">
+                <option value="+1" data-country-code="US">🇺🇸 +1 (USA)</option>
+                <option value="+44" data-country-code="GB">🇬🇧 +44 (UK)</option>
+                <option value="+91" data-country-code="IN" selected>🇮🇳 +91 (India)</option>
+            </select><br>
+            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="e.g., 9876543210" required><br>
+            <label for="message">Message</label><br>
+            <textarea name="message" id="comments" placeholder="please write your valueble feedback..."></textarea><br>
+            <button>Submit</button>
+        </section>
+    </section>
+    <div id="thankYouModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Thank You!</h2>
+            <p>Your message has been sent successfully. I will contact you soon.</p>
+        </div>
+    </div>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.querySelector('.contact_form');
+            const submitButton = contactForm.querySelector('button');
+            const modal = document.getElementById('thankYouModal');
+            const closeButton = document.querySelector('.close-button');
+
+            submitButton.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevents the page from reloading.
+
+                const emailInput = document.getElementById('input1');
+                const messageTextarea = document.getElementById('comments');
+
+                if (emailInput.value.trim() !== '' && messageTextarea.value.trim() !== '') {
+                    modal.style.display = 'block'; // Show the modal pop-up
+                    contactForm.reset(); // Clear the form
+                } else {
+                    alert('Please fill out the email and message fields.');
+                }
+            });
+
+            closeButton.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
