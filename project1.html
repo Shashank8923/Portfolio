@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:#799490d8;
+            
+            margin: 0;
+        }
+        @media (max-width: 1080px) {
+            body {
+              background-color:#799490d8 ;
+              margin: 0;
+              padding: 0;
+              background-size: contain;
+
+            }
+             
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:  10px;
+            height: 70px;
+            background-color:rgba(134, 186, 207, 0.904);
+            margin-top: 0px;
+            margin: 0px;
+            
+        }
+        @media  (max-width: 1080px){
+            header{
+                
+                display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* padding:  10px; */
+            height: 30px;
+            width:100% ;
+            background-color:rgba(134, 186, 207, 0.904);
+            background-size: cover;
+            margin-top: 0px;
+            margin: 0px;
+            }
+        }
+        img{
+            width: 50px;
+            height: 50px;
+        }
+        @media (max-width:1080px){
+            img{
+                width: 30px;
+                height: 30px;
+            }
+        }
+        ul{
+            display: flex;
+        }
+        @media (max-width:1080px){
+            ul{
+                display: flex;
+                /* margin: 20px; */
+                padding: 30px;
+            }
+        }
+        li,a{
+            list-style: none;
+            text-decoration: none;
+            margin: 0 10px;
+            cursor: pointer;
+            text-transform: capitalize;
+            font-size: large;
+            color: white;
+        }
+        @media (max-width:1080px){
+            li,a{
+                list-style: none;
+                text-decoration: none;
+                margin:0;
+                text-transform: capitalize;
+                font-weight: small;
+                color:black;
+                padding: 5px;
+                font-size: 5px;
+            }
+        }
+        li,a:hover{
+            color: grey;
+        }
+        @media (max-width:1080px){
+            li,a:hover{
+                color: grey;
+            }
+        }
+        input{
+            /* padding: 5px; */
+            border: 2px solid black;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            height: 25px;
+        }
+        @media (max-width:1080px){
+            input{
+                border: 2px solid black;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            height: fit-content;
+            width: fit-content;
+            font-size: 5px;
+            }
+        }
+        button{
+            /* padding: 5px 10px; */
+            border: 2px solid black;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            
+            background-color: #f3f3f3;
+            cursor: pointer;
+            height: 25px;
+        }
+        @media (max-width:1080px){
+            button{
+                border: 2px solid black;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            
+            background-color: #f3f3f3;
+            cursor: pointer;
+            height: fit-content;
+            width: fit-content;
+            font-size: 5px;
+            }
+        }
+        .logo{
+            display: grid;
+            align-items: center;
+            grid-template-columns: 60px 1fr;
+            padding: 10px;
+            color:black;
+            text-transform: capitalize;
+            font-size: 30px;
+            font-weight: bold;
+         
+    
+        }
+        @media (max-width:1080px){
+            .logo{
+                display: grid;
+            align-items: center;
+            grid-template-columns: 30px 1fr;
+            /* padding: 10px; */
+            color:black;
+            text-transform: capitalize;
+            font-size: 10px;
+            /* font-weight: bold; */
+            }
+        }
+       
+       .baners,h1{
+        background-color: black;
+        color: white;
+        text-align: center;
+        height: fit-content;
+        margin-bottom: 0px;
+        font-size: 50px;
+        margin-top: 0px;
+        text-transform: capitalize;
+       }
+       @media (max-width:1080px){
+        .baners,h1{
+            background-color: black;
+        color: white;
+        text-align: center;
+        height: fit-content;
+        /* margin-bottom: 0px; */
+        font-size: 20px;
+        margin-top: 0px;
+        text-transform: capitalize;
+        }
+       }
+       .baners,h2{
+        background-color:purple;
+        text-align: center;
+        height:fit-content;
+        margin-top: 0px;
+        font-size: 30px;
+        text-transform: capitalize;
+       }
+       @media (max-width:1080px){
+        .baners,h2{
+            background-color:purple;
+        text-align: center;
+        height:fit-content;
+        margin-top: 0px;
+        font-size: 10px;
+        text-transform: capitalize;
+        }
+       }
+       .products{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+        justify-content: center;
+       }
+       @media (max-width:1080px){
+        .products{
+            display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 1px;
+        justify-content: center;
+        
+        }
+       }
+
+       #product-img{
+           width: 300px;
+           height: 300px;
+           margin: 14px;
+           filter: drop-shadow(0 0  10px black);
+           border: 1px solid black;
+       }
+       @media (max-width:1080px){
+        #product-img{
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+           filter: drop-shadow(0 0  10px black);
+           border: 1px solid black;
+        }
+       }
+       #product-img:hover{
+           transform: scale(1.1);
+           transition: 0.5s;
+           border: 2px solid black;
+           border-radius: 10px;
+           cursor: pointer;
+
+       }
+       @media (max-width:1080px){
+        #product-img:hover{
+            transform: scale(1.1);
+           transition: 0.5s;
+           border: 2px solid black;
+           border-radius: 10px;
+           cursor: pointer;
+        }
+       }
+        .price{
+           position: absolute;
+           left: 200px;
+           top: 220px;
+          
+            font-size: 14px;
+            color: black;
+            /* font-weight: bold; */
+        }
+        @media (max-width:1080px){
+            .price{
+           position: absolute;
+           left: 35px;
+           top: 110px;
+          
+            font-size: 5px;
+            color: black;
+            /* font-weight: bold; */
+        }
+        }
+        b{
+            font-size: 25px;
+        }
+        @media (max-width:1080px){
+            b{
+                font-size: 10px;
+            }
+        }
+        .price2{
+           position: absolute;
+           left: 540px;
+           top: 220px;
+          
+            font-size: 14px;
+            color: black;
+            /* font-weight: bold; */
+        }
+        @media (max-width:1080px){
+            .price2{
+           position: absolute;
+           left: 160px;
+           top: 110px;
+          
+            font-size: 5px;
+            color: black;
+            /* font-weight: bold; */
+        }
+        }
+        .price3{
+           position: absolute;
+           left: 870px;
+           top: 220px;
+          
+            font-size: 14px;
+            color: black;
+            /* font-weight: bold; */
+        }
+        @media (max-width:1080px){
+            .price3{
+           position: absolute;
+           left: 290px;
+           top: 110px;
+          
+            font-size: 5px;
+            color: black;
+            /* font-weight: bold; */
+        }
+        }
+        .price4{
+           position: absolute;
+           left: 200px;
+           top: 560px;
+          
+            font-size: 14px;
+            color: black;
+            /* font-weight: bold; */
+        }
+        @media (max-width:1080px){
+            .price4{
+           position: absolute;
+           left:45px;
+           top: 230px;
+          
+            font-size: 5px;
+            color: black;
+            /* font-weight: bold; */
+        }
+        }
+        .price5{
+           position: absolute;
+           left: 550px;
+           top: 560px;
+          
+            font-size: 10px;
+            color: black;
+            /* font-weight: bold; */
+        }
+        @media (max-width:1080px){
+            .price5{
+           position: absolute;
+           left: 160px;
+           top: 230px;
+          
+            font-size:5px;
+            color: black;
+            /* font-weight: bold; */
+        }
+        }
+        .price6{
+           position: absolute;
+           left: 870px;
+           top: 560px;
+          
+            font-size: 10px;
+            color: black;
+            /* font-weight: bold; */
+        }
+        @media (max-width:1080px){
+            .price6{
+           position: absolute;
+           left: 285px;
+           top: 230px;
+          
+            font-size: 5px;
+            color: black;
+            /* font-weight: bold; */
+        }
+        }
+        footer{
+            background-color: #668fcc;
+            display: flex;
+            justify-content: start;
+        }
+        @media (max-width:1080px){
+            footer{
+                background-color: #668fcc;
+            display: flex;
+            justify-content: start;
+            }
+        }
+        
+       #footer-nav,a{
+        list-style: none;
+        display: inline;
+        color: white;
+        font-weight: bold;
+       }
+       @media (max-width:1080px){
+        #footer-nav,a{
+            list-style: none;
+            display: inline;
+            color: white;
+            /* font-weight: bold; */
+            font-size: 8px;
+            padding: 3px;
+            
+
+
+        }
+       }
+
+             
+       
+
+           
+           
+            
+        
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+
+            <img src="logo.png" alt="">
+            <p>yours fashion</p>
+        </div>
+        <ul>
+            <li><a href="project1.html">home</a></li>
+            <li><a href="#home">orders</a></li>
+            <li><a href="#home">today's deal</a></li>
+            <li><a href="feedback2.html">feedback</a></li>
+            
+            
+
+        </ul>
+        <nav>
+
+            <input type="search" placeholder="🔍search">
+            <button>search</button>
+        </nav>
+    </header>
+    <nav class="baners">
+        <h1>hurry up! order your clothes now.</h1>
+        <h2>today's deal</h2>
+    </nav>
+    <div class="products">
+        <img src="img/coat.jpg" alt="image" id="product-img">
+        <span class="price"> <b>Suits</b> <br><del>Rs 13999</del> 9999</span>
+        <img src="img/jackets.jpg" alt="image" id="product-img" >
+        <span class="price2" ><b >jackets</b><br><del>Rs.4330</del> 3456</span>
+        <img src="img/jeans.jpg" alt="image" id="product-img">
+        <span class="price3"><b >jeans</b> <br>Rs.1800 For Two</span>
+        <img src="img/kurtas.jpg" alt="image" id="product-img">
+        <span class="price4"><b >kurtas</b> <br><del>Rs.2300</del>1799</span>
+        <img src="img/plazo.jpg" alt="image" id="product-img" >
+        <span class="price5"><b>plazo</b><br><del>Rs.1950</del>1599</span>
+        <img src="img/tshirt.jpg" alt="image"  id="product-img">
+        <span class="price6"><b >tshirt</b><br><del>RS.899</del>499</span>
+    </div>
+    <footer>
+        <ol>
+            <li id="footer-nav"><a href="project1.html">home</a></li>
+            <li id="footer-nav"><a href="#home">orders</a></li>
+            <li id="footer-nav"><a href="#home">today's deal</a></li>
+            <li id="footer-nav"><a href="feedback2.html">feedback</a></li>
+            <li id="footer-nav">©copyright2025|yours fashion</li>
+        
+        </ol>
+    </footer>
+    
+</body>
+</html>

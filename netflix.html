@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movie List (P for Numbers)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        
+    <style>
+        /* A more robust reset to remove default margins and paddings */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgba(0, 0, 0, 0.801);
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        /* === Header Styling === */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            padding: 10px 20px;
+            flex-wrap: wrap;
+            /* Allows items to wrap on smaller screens */
+        }
+
+        #header-img {
+            width: 100px;
+            height: auto;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        #lang {
+            background-color: black;
+            color: white;
+            height: 35px;
+            border-radius: 5px;
+            border: 2px solid white;
+            padding: 5px;
+        }
+
+        #button1 {
+            background-color: red;
+            height: 35px;
+            border-radius: 5px;
+            border: 2px solid white;
+            color: white;
+            font-weight: 600;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        /* === Hero Section Styling === */
+        .hero-section {
+            background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/fbf440b2-24a0-49f5-b2ba-a5cbe8ea8736/web_tall_panel/IN-en-20250324-TRIFECTA-perspective_69cb00d3-7b5e-45e8-b378-7757f9c8f60b_large.jpg);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 150px 50px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin: 0;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin: 10px 0;
+        }
+
+        .hero-content h3 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin: 10px 0;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            font-weight: 100;
+            margin-bottom: 20px;
+        }
+
+        .cta-form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        #search {
+            height: 50px;
+            border-radius: 5px;
+            border: none;
+            padding: 0 15px;
+            font-size: 1rem;
+            width: 300px;
+        }
+
+        #button2 {
+            background-color: red;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            border: none;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+
+        /* === Movie Row Styling === */
+        .movie-gallery {
+            padding: 20px 0;
+            background-color: black;
+        }
+
+        .movie-row {
+            display: flex;
+            overflow-x: scroll;
+            gap: 15px;
+            padding: 20px;
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .movie-row::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, and Opera */
+        }
+
+        .movie-box {
+            position: relative;
+            flex-shrink: 0;
+            width: 180px;
+            height: 300px;
+            /* Set a fixed height for the box */
+            display: flex;
+            justify-content: center;
+            /* Center the content horizontally */
+            align-items: center;
+            /* Center the content vertically */
+        }
+
+        .movie-box img {
+            width: 100%;
+            height: 100%;
+            /* Make the image fill the fixed height of the container */
+            object-fit: cover;
+            /* This is the most important part! It ensures the image fills the space without distortion */
+            border-radius: 10px;
+        }
+
+        .rank {
+            position: absolute;
+            bottom: -5px;
+            left: -15px;
+            font-size: 5rem;
+            font-weight: bold;
+            color: black;
+            text-shadow: 2px 2px 0 white, -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .movie-box {
+                width: 120px;
+                height: 200px;
+                /* Adjust the fixed height for smaller screens */
+            }
+
+            .rank {
+                font-size: 3rem;
+                left: -10px;
+                bottom: -5px;
+            }
+        }
+
+        /* === Media Queries for Responsiveness === */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero-section {
+                padding: 100px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .cta-form {
+                flex-direction: column;
+            }
+
+            #search {
+                width: 100%;
+            }
+
+            .movie-row {
+                padding: 10px;
+            }
+
+        }
+
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            margin: 20px;
+        }
+
+        .footer-logo img {
+            width: 150px;
+            height: auto;
+        }
+
+        .footer-links h4,
+        .footer-social h4 {
+            border-bottom: 2px solid #555;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #ccc;
+            display: block;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .social-icons a img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid #555;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-section {
+                margin: 10px 0;
+                text-align: center;
+                width: 100%;
+            }
+
+            .footer-logo img {
+                margin-bottom: 20px;
+            }
+
+            .social-icons {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img id="header-img"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAilBMVEUAAACxBg/lCRS0Bg+OBQyuBg+rBg/pCRR6BAqkBQ+XBA6oBg+aBA6iBQ+FBAudBQ6JAw2SBA7uCRXaCBOCAg14BArgCBTBBxG7BhHPCBLHBxIhAQNeAwjUCBJSAwd0BApqBAk3AgUpAQRDAwZlBAkbAQJoBAlLAAcUAAEuAQRZAwdIAgY9AgUlAAP3SicRAAAHb0lEQVR4nO2da1PiShR..."
+            alt="">
+        <nav>
+            <select name="lang" id="lang">
+                <option value="english">english</option>
+                <option value="english">hindi</option>
+            </select>
+            <button id="button1">sign in </button>
+        </nav>
+    </header>
+    <section class="hero-section">
+        <article class="hero-content">
+            <h1>Unlimited movies, TV</h1>
+            <h2>shows and more</h2>
+            <h3>Starts at ₹149. Cancel at any time.</h3>
+            <p>Ready to watch? Enter your email to create or restart your membership.</p>
+            <div class="cta-form">
+                <input type="search" id="search" placeholder=" 🔎 search">
+                <button id="button2">get started <span>></span></button>
+            </div>
+        </article>
+    </section>
+
+    <div class="movie-gallery">
+        <div class="movie-row" id="movie-row">
+            <div class="movie-box">
+                <img src="anime/anime22.jpg" alt="Movie 1">
+                <p class="rank">1</p>
+            </div>
+
+            <div class="movie-box">
+                <img src="anime/theboys.jpeg" alt="Movie 2">
+                <p class="rank">2</p>
+            </div>
+
+            <div class="movie-box">
+                <img src="anime/dragon-ball-daima.jpeg" alt="Movie 3">
+                <p class="rank">3</p>
+            </div>
+
+            <div class="movie-box">
+                <img src="anime/sololeveling.jpeg" alt="Movie 4">
+                <p class="rank">4</p>
+            </div>
+
+            <div class="movie-box">
+                <img src="anime/anime5.jpg" alt="Movie 5">
+                <p class="rank">5</p>
+            </div>
+
+            <div class="movie-box">
+                <img src="anime/anime4.jpg" alt="Movie 6">
+                <p class="rank">6</p>
+            </div>
+
+            <div class="movie-box">
+                <img src="anime/anime3.jpg" alt="Movie 7">
+                <p class="rank">7</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Handles the "Get Started" button click
+        document.getElementById('button2').addEventListener('click', function () {
+            const emailInput = document.getElementById('search');
+            const email = emailInput.value;
+
+            // Basic validation for an email address
+            if (email === '') {
+                alert('Please enter your email address to get started.');
+            } else if (!email.includes('@') || !email.includes('.')) {
+                alert('Please enter a valid email address.');
+            } else {
+                // In a real application, you would send this data to a server
+                alert('Thank you for your interest! We will send updates to ' + email + '.');
+                emailInput.value = ''; // Clear the input field
+            }
+        });
+
+        // Handles the search functionality to filter movies
+        document.getElementById('search').addEventListener('input', function () {
+            const query = this.value.toLowerCase();
+            const movieBoxes = document.querySelectorAll('.movie-box');
+
+            movieBoxes.forEach(box => {
+                // We use the alt text of the image as the movie title
+                const movieTitle = box.querySelector('img').alt.toLowerCase();
+
+                // Show all movies if the search bar is empty, otherwise filter based on the query
+                if (movieTitle.includes(query) || query === '') {
+                    box.style.display = 'block';
+                } else {
+                    box.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section footer-logo">
+                <img src="logo.png" alt="Company Logo">
+            </div>
+
+            <div class="footer-section footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

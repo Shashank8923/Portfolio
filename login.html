@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="mange.css">
+</head>
+
+<body>
+     <div class="main-header">
+         <nav>
+            <div class="logo"><img class="main_logo" src="logo.png" alt="S.Sisodia"></div>
+            <ul>
+                <li><a class="pages" href="login.html">Home</a></li>
+                <li><a class="pages" href="login.html">login</a></li>
+                <li><a class="pages" href="viewer.html">record</a></li>
+                <li><a class="pages" href="viewer.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <br>
+    <div class="login-container">
+        <h2> Admin Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+            <p id="error-message" class="error-message"></p>
+        </form>
+    </div>
+    <script src="login.js"></script>
+
+    
+</body>
+</html>
