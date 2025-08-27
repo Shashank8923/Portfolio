@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="mange.css">
+</head>
+
+<body>
+
+    <div class="main-header">
+         <nav>
+            <div class="logo"><img class="main_logo" src="logo.png" alt="S.Sisodia"></div>
+            <ul>
+                <li><a class="pages" href="login.html">Home</a></li>
+                <li><a class="pages" href="login.html">login</a></li>
+                <li><a class="pages" href="viewer.html">record</a></li>
+                <li><a class="pages" href="viewer.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="dashboard-container">
+        <header>
+            <h2>Admin Dashboard</h2>
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+        </header>
+
+        <div class="controls">
+            <button id="showAddFormBtn" class="add-btn">Add New User</button>
+        </div>
+
+        <div class="data-table-container">
+            <h3>User Data</h3>
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+
+        <div id="dataFormContainer" class="form-modal" style="display:none;">
+            <div class="form-content">
+                <span class="close-btn">&times;</span>
+                <h3>Add/Edit User</h3>
+                <form id="dataForm">
+                    <input type="hidden" id="dataId">
+                    <div class="input-group">
+                        <label for="dataName">Name</label>
+                        <input type="text" id="dataName" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="dataEmail">Email</label>
+                        <input type="email" id="dataEmail" required>
+                    </div>
+                    <button type="submit" class="submit-form-btn">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="sc.js"></script>
+    
+    
+</body>
+</html>
