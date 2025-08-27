@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shashank Sisodia - Portfolio</title>
+    <link rel="stylesheet" href="About.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="#" class="logo">Sh@shank</a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="project-page.html">Projects</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="introduction ">
+        <div class="hero-content">
+            <div class="hero-subcontent">
+                <img class="profile_section" src="shashank.jpg" alt="my profile photo ">
+                <h1>Hi, I'm [ Shashank sisodia ]</h1>
+                <section id="introduction">
+                    <p>
+                        <span>Hello!</span> I'm <span> Shashank sisodia </span>, an aspiring Student(Fresher) with a
+                        keen interest in web development. I'm building my project portfolio to showcase my skills and
+                        work in <span>HTML, CSS, and JavaScript.</span>
+                    </p>
+                    <p>
+                        I completed my high school education at Saraswati Vidya Mandir, Gonda Modh Khair Road, Aligarh,
+                        and pursued a <span> in Computer Science and Engineering </span>from Janta Polytechnic,
+                        Jahangirabad, Bulandshahr, Uttar Pradesh. Additionally, I undertook a six-month web development
+                        course focusing on HTML, CSS, and JavaScript, and have personal experience with Git and GitHub.
+                    </p>
+                    <p>
+                        Outside of my technical pursuits, I enjoy reading manga, playing online games, and staying
+                        active at the gym. I also find engaging in conversations with AI quite fascinating!
+                    </p>
+                </section>
+            </div>
+            <section id="education">
+                <div class="education-item">
+                    <h3>High School</h3>
+                    <p><strong>Saraswati Vidya Mandir</strong> | Gonda Modh Khair Road, Aligarh</p>
+                    <p>[15-07-2020]</p>
+                </div>
+                <br>
+                <div class="education-item">
+                    <h3>Diploma in Computer Science and Engineering</h3>
+                    <p><strong>Janta Polytechnic</strong> | Jahangirabad, Bulandshahr, Uttar Pradesh</p>
+                    <p>[20-10-2021] – [03-10-2024]</p>
+                </div>
+                <br>
+                <div class="education-item">
+                    <h3>Web Development (HTML, CSS, JavaScript)</h3>
+                    <p>Six-month additional course</p>
+                    <p>[01-01-2025] – [30-06-2025]</p>
+                    <ul>
+                        <li>Learned fundamental concepts and practical application of HTML, CSS, and JavaScript.</li>
+                        <li>Gained personal knowledge in Git and GitHub for version control.</li>
+                    </ul>
+                </div>
+                <br>
+                <div class="education-item">
+                    <h3>[Web Development(Frontend)]</h3>
+                    <p><strong>[Altica Green edu care ]</strong> | [Aligarh, Uttar pradesh /India]</p>
+                    <p>[30-06-2025]</p>
+                    <p><em>(Details to be added later once certificate is available)</em></p>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    </script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
