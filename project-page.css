@@ -5,7 +5,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #fcfbfb;
-    background-image: url(images/blue-star.gif);
+    background-image:url(blue-star.gif);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -221,4 +221,5 @@ footer {
         font-size: 11px;
         padding: 6px 10px;
     }
+
 }
