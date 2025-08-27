@@ -11,7 +11,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-image: url(main/blue-star.gif);
+    background-image: url(portfolio/blue-star.gif);
     overflow: scroll;
     scroll-behavior: smooth;
 }
@@ -488,5 +488,6 @@ label {
     }
 
 }
+
 
 
