@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Shashank Sisodia</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="#" class="logo">Sh@shank</a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="project-page.html">Projects</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="flip-card-container" tabindex="0">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h1>Contact Me!</h1>
+                    <p>Hover over me or tap to reveal contact details.</p>
+                    <span class="front-icon">&#x2709;</span> 
+                </div>
+
+                <div class="flip-card-back">
+                    <h2>Get in Touch!</h2>
+                    <p class="intro-text">
+                        I'm always excited to connect with new people and discuss potential collaborations, projects, or just a friendly chat. Feel free to reach out through any of the channels below.
+                    </p>
+
+                    <ul class="contact-list">
+                        <li>
+                            <span class="icon">&#9993;</span> <strong>Email:</strong> 
+                            <a href="mailto:shashanksisodia421@gmail.com">shashanksisodia421@gmail.com</a>
+                        </li>
+                        <li>
+                            <span class="icon">&#x1F517;</span> <strong>LinkedIn:</strong> 
+                            <a href="https://www.linkedin.com/in/yourprofile/" target="_blank" rel="noopener noreferrer">linkedin.com/in/yourprofile</a>
+                        </li>
+                        <li>
+                            <span class="icon">&#x1F4BB;</span> <strong>GitHub:</strong> 
+                            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">github.com/yourusername</a>
+                        </li>
+                    </ul>
+
+                    <p class="closing-text">
+                        Looking forward to hearing from you!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Shashank. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    </script>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
