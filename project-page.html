@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="project-page.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="#" class="logo">Sh@shank</a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="project-page.html">Projects</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <br>
+    <section class="hero-grid">
+        <div class="hero-item">
+            <img src="Screenshot project-1.png" alt="Project 1">
+            <h3>E-commerce Shop (simpel)</h3>
+            <p>Description of Project 1.</p>
+            <a href="project1.html" ` class="project-link">View Project</a>
+
+
+        </div>
+
+        <div class="hero-item">
+            <img src="anime/insta.png" alt="Project 2">
+            <h3>instagram (Login page )</h3>
+            <p>Description of Project 1.</p>
+            <a href="insta.html" class="project-link">View Project</a>
+        </div>
+        <div class="hero-item">
+            <img src="anime/facebook.png" alt="Project 3">
+            <h3>facebook login [page]</h3>
+            <p>Description of Project 1.</p>
+            <a href="facebook login.html" ` class="project-link">View Project</a>
+        </div>
+        <div class="hero-item">
+            <img src="anime/netflix-examole.png" alt="Project 4">
+            <h3>Netflix Home page (clone)</h3>
+            <p>Description of Project 1.</p>
+            <a href="netflix.html" class="project-link">View Project</a>
+        </div>
+        <div class="hero-item">
+            <img src="anime/DB2.jpg.png" alt="Project 5">
+            <h3>Dragon-ball-legends fanpage</h3>
+            <p>Description of Project 1.</p>
+            <a href="db2.html" ` class="project-link">View Project</a>
+        </div>
+        <div class="hero-item">
+            <img src="anime/blog.png" alt="Project 6">
+            <h3>Blog page </h3>
+            <p>Description of Project 1.</p>
+            <a href="fisrt blog.html" ` class="project-link">View Project</a>
+        </div>
+        <div class="hero-item">
+            <img src="anime/exam form .png" alt="Project 7">
+            <h3>Entrance Exam Application Form</h3>
+            <p>Description of project </p>
+            <a href="exam form.html" ` class="project-link">View Project</a>
+        </div>
+
+
+    </section>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Your Name. All rights reserved.</p>
+    </footer>
+
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    </script>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
