@@ -152,6 +152,15 @@ h2 {
     border: 2px solid black;
     margin: 0 auto 10px;
     display: block;
+ ox-shadow: 0 4px 8px rgba(226, 223, 223, 0.2);
+}
+.profile_photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(248, 248, 248, 0.685);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    height: 250px ;
+    width: 250px ;
 }
 
 .btn {
@@ -488,6 +497,7 @@ label {
     }
 
 }
+
 
 
 
