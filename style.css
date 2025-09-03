@@ -318,7 +318,7 @@ textarea {
     margin: 5px 0 15px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
-    color: white;
+    color: grey;
 }
 
 button {
@@ -497,6 +497,7 @@ label {
     }
 
 }
+
 
 
 
