@@ -260,3 +260,39 @@ footer p {
     }
 
 }
+.certificate-container {
+  width: 300px; 
+  height: 200px; 
+  overflow: hidden; 
+  border: 1px solid #ccc; 
+  cursor: pointer;
+  position: relative;
+  left: 60px;
+  box-shadow: 0 3px 8px rgb(247, 242, 242);
+
+}
+@media (max-width: 768px) {
+
+
+    .certificate-container {
+  width: 300px; 
+  height: 200px; 
+  overflow: hidden; 
+  border: 1px solid #ccc; 
+  cursor: pointer;
+  position: relative;
+  left: 5px;
+  box-shadow: 0 3px 8px rgb(247, 242, 242);
+   
+
+}
+}
+
+
+.certificate-container img {
+  width: 100%; 
+  display: block; 
+  float: right;
+}
+
+
